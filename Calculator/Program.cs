@@ -6,8 +6,8 @@ namespace Calculator
     {
         static void Main(string[] args)
         {   
-            //Chamada do método Subtração      
-            Subtracao();
+            //Chamada do método Divisão      
+            Divisao();
         }
 
         //Criação no método Soma
@@ -54,6 +54,24 @@ namespace Calculator
             Console.ReadKey(); //Impede o fechamento automático do programa 
 
 
+        }
+
+        //Criação no método Divisão
+        static void Divisao()
+        {
+            Console.Clear();
+
+            Console.WriteLine("Primeiro valor: ");
+            float v1 = float.Parse(Console.ReadLine());
+
+            Console.WriteLine("Segundo valor: "); 
+            float v2 = float.Parse(Console.ReadLine()); 
+
+            Console.WriteLine("");
+
+            float resultado = v1 / v2;
+            Console.WriteLine ($"O resultado da divisão é {resultado}"); 
+            Console.ReadKey(); 
         }
     }
 }
