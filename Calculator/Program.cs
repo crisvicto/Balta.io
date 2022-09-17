@@ -6,8 +6,37 @@ namespace Calculator
     {
         static void Main(string[] args)
         {   
-            //Chamada do método Multiplicação      
-            Multiplicacao();
+            //Chamada da função     
+            Menu();
+        }
+
+        //Função
+        static void Menu()
+        {
+            Console.Clear();
+
+            Console.WriteLine("Qual operação deseja realizar?");
+            Console.WriteLine("1 - Soma"); 
+            Console.WriteLine("2 - Subtração"); 
+            Console.WriteLine("3 - Divisão"); 
+            Console.WriteLine("4 - Multiplicação");
+
+            Console.WriteLine("----------------------");
+            Console.WriteLine("Selecione uma opção: ");
+
+            // leitura do dado digitado pelo usuário
+            short res = short.Parse(Console.ReadLine()); 
+
+            //Chamando as funções
+            switch (res)
+            {
+                case 1: Soma(); break; 
+                case 2: Subtracao(); break;
+                case 3: Divisao(); break;
+                case 4: Multiplicacao(); break;
+                default: Menu(); break;
+            }
+        
         }
 
         //Criação no método Soma
@@ -26,6 +55,8 @@ namespace Calculator
             float resultado = v1 + v2;
             Console.WriteLine("O resultado da soma é: " + resultado);
             Console.ReadKey();
+            //Faz com que a aplicação não feche retornando ao menu inicial
+            Menu(); 
 
             /*
             Interpolação de Strings
@@ -52,6 +83,7 @@ namespace Calculator
             float resultado = v1 - v2; 
             Console.WriteLine($"O resultado da subtração é: {resultado}");
             Console.ReadKey(); //Impede o fechamento automático do programa 
+            Menu();
 
 
         }
@@ -71,7 +103,8 @@ namespace Calculator
 
             float resultado = v1 / v2;
             Console.WriteLine ($"O resultado da divisão é {resultado}"); 
-            Console.ReadKey(); 
+            Console.ReadKey();
+            Menu(); 
         }
 
         static void Multiplicacao()
@@ -89,6 +122,7 @@ namespace Calculator
             float resultado = v1 * v2; 
             Console.WriteLine("O resultado da multiplicação é " + (v1 * v2)); 
             Console.ReadKey(); 
+            Menu();
         }
     }
 }
