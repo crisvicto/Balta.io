@@ -5,6 +5,13 @@ namespace Calculator
     class Program
     {
         static void Main(string[] args)
+        {   
+            //Chamada do método Subtração      
+            Subtracao();
+        }
+
+        //Criação no método Soma
+        static void Soma()
         {
             Console.Clear();
 
@@ -18,6 +25,7 @@ namespace Calculator
 
             float resultado = v1 + v2;
             Console.WriteLine("O resultado da soma é: " + resultado);
+            Console.ReadKey();
 
             /*
             Interpolação de Strings
@@ -26,8 +34,25 @@ namespace Calculator
             Utilizando parenteses
             Console.WriteLine("O resultado da soma é: " + (v1 + v2));
             */
+        }
 
-            
+        //Criação no método Subtração
+        static void Subtracao()
+        {
+            Console.Clear();
+
+            Console.WriteLine("Primeiro valor: ");
+            float v1 = float.Parse(Console.ReadLine());
+
+            Console.WriteLine("Segundo valor: ");
+            float v2 = float.Parse(Console.ReadLine());
+
+            Console.WriteLine("");
+
+            float resultado = v1 - v2; 
+            Console.WriteLine($"O resultado da subtração é: {resultado}");
+            Console.ReadKey(); //Impede o fechamento automático do programa 
+
 
         }
     }
